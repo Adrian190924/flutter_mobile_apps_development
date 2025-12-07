@@ -12,7 +12,7 @@ Penggunaan desain MVVM Pattern memastikan pemisahan yang jelas antara U, logika,
 * Mewakili struktur data dari satu entitas pengeluaran. Berisikan atribut seperti 'id', 'title', 'amount', 'date' dan 'category'
 * Repositorynya mensimulasikan sumber data. Menangani operasi **CRUD** (Create, Read, Update, Delete)
 
-## 2. View (UI Layer)
+### 2. View (UI Layer)
 * **Files:** 'lib/view/pages/home_page.dart' dan 'lib/view/pages/add_expense_page.dart'
 * UI yang berinteraksi dengan user, memiliki dua halaman. Viewnya mengamati perubahan dalam ViewModel menggunakan widget 'Consumer' dari package 'provider' dan membangun ulang secara otomatis ketika data berubah.
 * **Home Page:** Menampilkan daftar pengeluaran dan memiliki fitur gesture "Swipe to delete"
