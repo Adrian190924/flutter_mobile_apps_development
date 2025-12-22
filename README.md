@@ -1,16 +1,18 @@
-# uco_mad_sem4
+# uco_mad_sem4 (Mobile Apps Development - Progress AFL 3)
 
-A new Flutter project.
+## 🧪 Unit Testing
 
-## Getting Started
+Implementasi Unit Testing untuk class `ExpenseViewModel` untuk memastikan integritas logikanya.
 
-This project is a starting point for a Flutter application.
+**Test File:** `test/expense_view_model_test.dart`
 
-A few resources to get you started if this is your first Flutter project:
+**Function yang di testing:**
+1.  **`addExpense()`**: Memverifikasi pengeluaran baru dibuat dan ditambahkan dengan benar ke state list.
+2.  **`updateExpense()`**: Test untuk memastikan bahwa pengeditan data pengeluaran seperti judul, harga, dan/atau kategori benar-benar memperbarui objek yang ada tanpa menduplikasinya.
+3.  **`deleteExpense()`**: Memverifikasi bahwa suatu item benar-benar dihapus dari daftar dan perhitungan total pengeluaran diperbarui secara langsung.
+4.  **Budget Logic (`budgetProgress`)**: Test uji logika matematika untuk memastikan Progress Bar menerima data secara benar dan mendeteksi over-budget.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Logic Followed (Arrange-Act-Assert):**
+* **Arrange:** Inisialisasi ViewModel dan mendefinisikan data dummy.
+* **Act:** Memanggil method asynchronous (`addExpense`, `deleteExpense`).
+* **Assert:** Mengecek apakah pengujian sesuai dengan nilai yang diharapkan menggunakan `expect()`.
