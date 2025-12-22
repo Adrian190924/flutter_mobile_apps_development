@@ -72,4 +72,27 @@ class ExpenseViewModel extends ChangeNotifier {
 
     notifyListeners();
   }
+
+  // BUDGET LOGIC
+  // Default Budget (Make Editable Later)
+  double _budgetLimit = 500000; 
+
+  double get budgetLimit => _budgetLimit;
+
+  // Total Spent Calculation
+  double get totalExpenses {
+    return _expenses.fold(0, (sum, item) => sum + item.amount);
+  }
+
+  // Progress Bar Calculation
+  double get budgetProgress {
+    if (_budgetLimit == 0) return 0;
+    return totalExpenses / _budgetLimit;
+  }
+
+  // Update Budget
+  void setBudget(double newLimit) {
+    _budgetLimit = newLimit;
+    notifyListeners();
+  }
 }
